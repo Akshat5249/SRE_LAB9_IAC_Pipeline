@@ -1,0 +1,13 @@
+- name: Configure SRE Monitoring Stack
+  hosts: monitoring_stack
+  gather_facts: false
+
+  roles:
+    - role: prometheus_rules
+      tags: [prometheus]
+
+    - role: grafana_dashboards
+      tags: [grafana]
+
+    - role: alertmanager_config
+      tags: [alertmanager]

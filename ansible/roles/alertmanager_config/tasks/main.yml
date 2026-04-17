@@ -1,0 +1,8 @@
+- name: Create Alertmanager config file
+  copy:
+    dest: "/tmp/alertmanager.yml"
+    content: |
+      route:
+        receiver: "default"
+      receivers:
+        - name: "default"

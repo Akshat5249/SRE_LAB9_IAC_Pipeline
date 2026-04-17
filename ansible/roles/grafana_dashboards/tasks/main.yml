@@ -1,0 +1,10 @@
+- name: Copy datasource config to local
+  copy:
+    src: "{{ role_path }}/files/datasource.yml"
+    dest: "/tmp/datasource.yml"
+
+- name: Copy into Grafana container
+  command: docker cp /tmp/datasource.yml grafana-{{ env }}:/etc/grafana/provisioning/datasources/datasource.yml
+
+- name: Restart Grafana
+  command: docker restart grafana-{{ env }}

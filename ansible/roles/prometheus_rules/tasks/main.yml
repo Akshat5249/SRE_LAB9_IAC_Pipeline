@@ -1,0 +1,7 @@
+- name: Copy alert rules to local temp
+  copy:
+    src: "{{ role_path }}/files/sre_alerts.yml"
+    dest: "/tmp/sre_alerts.yml"
+
+- name: Copy file into Prometheus container
+  command: docker cp /tmp/sre_alerts.yml prometheus-{{ env }}:/etc/prometheus/sre_alerts.yml
