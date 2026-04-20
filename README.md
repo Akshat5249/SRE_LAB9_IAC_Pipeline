@@ -1,4 +1,4 @@
-# SRE Lab 9
+# SRE Implementation
 
 Infrastructure-as-Code lab for standing up a local monitoring stack with Terraform and configuring it with Ansible. The project provisions Prometheus, Grafana, and Alertmanager as Docker containers, then applies monitoring configuration such as Prometheus alert rules and Grafana datasource settings.
 
